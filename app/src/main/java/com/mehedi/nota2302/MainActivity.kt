@@ -1,12 +1,13 @@
 package com.mehedi.nota2302
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.room.Room
 import com.mehedi.nota2302.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ContactAdapter.Listener {
 
     private lateinit var db: ContactDatabase
 
@@ -44,17 +45,22 @@ class MainActivity : AppCompatActivity() {
         binding.buttonGet.setOnClickListener {
 
             val contactList: List<Contact> = db.getContactDao().getAllContact()
-            var contactlist =""
 
-            contactList.forEach {
-                contactlist += "${it.name},${it.email},${it.mobile}\n\n"
+            val adapter = ContactAdapter(contactList, this@MainActivity)
 
-
-            }
-            binding.hudaiText.text = contactlist
+            binding.contactRCV.adapter = adapter
 
 
         }
+
+
+    }
+
+    override fun contactClick(contact: Contact) {
+
+        val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+        intent.putExtra(DetailsActivity.contactKey, contact)
+        startActivity(intent)
 
 
     }
