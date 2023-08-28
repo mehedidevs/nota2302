@@ -7,47 +7,16 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
-    <EditText
-        android:id="@+id/editTextName"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Full Name" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextMobile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mobile"
-        android:inputType="phone" />
-
-    <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
-
-    <Button
-        android:id="@+id/buttonGet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contactRCV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_contact" />
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_nav" />
 
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.mehedi.nota2302
+package com.mehedi.nota2302.models
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
@@ -10,12 +10,10 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity
 data class Contact(
-
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     @ColumnInfo("full_name")
     val name: String,
     val email: String,
     val mobile: String
-
 ) : Parcelable

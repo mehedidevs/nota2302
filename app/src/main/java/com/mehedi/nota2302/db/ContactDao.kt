@@ -1,16 +1,16 @@
-package com.mehedi.nota2302
+package com.mehedi.nota2302.db
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.mehedi.nota2302.models.Contact
 
 @Dao
 interface ContactDao {
 
     // CRUD
-
     @Insert
     fun createContact(contact: Contact)
 

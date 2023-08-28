@@ -1,11 +1,14 @@
-package com.mehedi.nota2302
+package com.mehedi.nota2302.ui
 
 import android.os.Build
 import android.os.Build.VERSION_CODES
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mehedi.nota2302.models.Contact
 import com.mehedi.nota2302.databinding.ActivityDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
     companion object {
         const val contactKey = "contactKey"
