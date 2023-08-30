@@ -18,13 +18,7 @@ class DBProvider {
     @Provides
     @Singleton
     fun providesDb(@ApplicationContext context: Context): ContactDatabase {
-        return Room
-            .databaseBuilder(
-                context,
-                ContactDatabase::class.java,
-                "contact_db"
-            ).allowMainThreadQueries()
-            .build()
+        return ContactDatabase.getInstance(context)
     }
 
     @Provides

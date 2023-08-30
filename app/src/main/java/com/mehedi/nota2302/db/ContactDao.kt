@@ -1,5 +1,6 @@
 package com.mehedi.nota2302.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -12,20 +13,16 @@ interface ContactDao {
 
     // CRUD
     @Insert
-    fun createContact(contact: Contact)
+    suspend fun createContact(contact: Contact)
 
     @Update
-    fun updateContact(contact: Contact)
+    suspend fun updateContact(contact: Contact)
 
     @Delete
-    fun deleteContact(contact: Contact)
+    suspend fun deleteContact(contact: Contact)
 
     @Query("SELECT * FROM Contact")
-    fun getAllContact() : List<Contact>
-
-
-
-
+    fun getAllContact(): LiveData<List<Contact>>
 
 
 }

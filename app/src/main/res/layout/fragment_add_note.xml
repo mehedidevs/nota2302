@@ -6,7 +6,7 @@
     android:layout_margin="16dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.AddNoteFragment">
+    tools:context=".ui.addnote.AddNoteFragment">
 
     <EditText
         android:id="@+id/editTextName"
