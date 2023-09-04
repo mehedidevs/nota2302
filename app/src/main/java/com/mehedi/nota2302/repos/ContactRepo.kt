@@ -8,8 +8,7 @@ import javax.inject.Inject
 class ContactRepo @Inject constructor(private val dao: ContactDao) {
 
 
-
-     fun getAllContact(): LiveData<List<Contact>> {
+    suspend fun getAllContact(): List<Contact> {
         return dao.getAllContact()
     }
 

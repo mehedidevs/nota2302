@@ -1,13 +1,17 @@
 package com.mehedi.nota2302.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.mehedi.nota2302.MainActivity2
 import com.mehedi.nota2302.utils.BaseFragment
 import com.mehedi.nota2302.models.Contact
 import com.mehedi.nota2302.R
 import com.mehedi.nota2302.databinding.FragmentHomeBinding
+import com.mehedi.nota2302.di.NotaApp
 import com.mehedi.nota2302.ui.ContactAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,7 +26,13 @@ class HomeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getAllContact().observe(viewLifecycleOwner) {
+
+        viewModel.getAllContact()
+
+
+
+
+        viewModel.allContact.observe(viewLifecycleOwner) {
 
             val adapter = ContactAdapter(it, this)
 

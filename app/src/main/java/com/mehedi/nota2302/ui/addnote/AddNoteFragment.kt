@@ -20,6 +20,14 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
         super.onViewCreated(view, savedInstanceState)
 
 
+
+        binding.btvCtxt.setOnClickListener {
+
+
+
+        }
+
+
         binding.buttonSubmit.setOnClickListener {
 
             val contact = Contact(
@@ -28,6 +36,10 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
                 binding.editTextEmail.text.toString(),
                 binding.editTextMobile.text.toString()
             )
+
+
+
+
 
             viewModel.addContact(contact)
 
